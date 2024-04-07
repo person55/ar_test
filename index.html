@@ -6,16 +6,10 @@
 </head>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs='sourceType: webcam;'>
-        <a-assets>
-            <!-- 비디오를 미리 로드합니다. autoplay와 loop 속성을 추가하세요. -->
-            <!-- 완전한 URL로 비디오 경로를 지정하세요. -->
-            <video id="vi" autoplay loop src="<iframe src="https://giphy.com/embed/mUe07z4xDmnPG" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/problems-answer-wd40-mUe07z4xDmnPG">via GIPHY</a></p>"></video>
-        </a-assets>
-        <!-- "hiro" 마커에 반응하여 비디오를 표시합니다. -->
-        <!-- 기본 마커 "hiro"를 사용합니다. -->
+        <!-- "hiro" 마커에 반응하여 이미지를 표시합니다 -->
         <a-marker preset="hiro">
-            <!-- #vi를 사용하여 a-assets 내의 video 태그를 참조합니다. -->
-            <a-video src="#vi" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-video>
+            <!-- 이미지의 경로를 "src"에 지정합니다 -->
+            <a-image src="https://media.giphy.com/media/T9pdDfqCgWCB2/giphy.gif?cid=790b7611tkcuk34s9zk661lx7asrv143vyggp3a47deccn6q&ep=v1_gifs_search&rid=giphy.gif&ct=g" position="0 0.5 0" rotation="-90 0 0" scale="2 2 2"></a-image>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
