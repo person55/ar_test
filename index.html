@@ -8,12 +8,12 @@
     <a-scene embedded arjs='sourceType: webcam;'>
         <a-assets>
             <!-- 여기에 GIF 이미지를 미리 로드합니다 -->
-            <img id="86660615611535590.gif" src="https://github.com/person55/ar_test/blob/master/86660615611535590.gif">
+            <img id="gif" src="https://github.com/person55/ar_test/blob/master/86660615611535590.gif">
         </a-assets>
         <!-- "hiro" 마커에 반응하여 GIF 이미지를 표시합니다 -->
-        <a-marker preset="hiro">
+        <a-marker preset="HIRO">
             <!-- a-image 대신 img 엘리먼트를 참조합니다 -->
-            <a-image src="86660615611535590.gif" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
+            <a-image src="gif" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
