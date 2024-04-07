@@ -1,3 +1,9 @@
+
+이미지를 표시하기 위한 코드로 변경하기 위해서, <video> 태그를 <img> 태그로 대체하고 <a-video>를 <a-image>로 바꿔야 합니다. 또한, 이미지 파일의 URL을 올바르게 지정해야 합니다. 주어진 코드에서는 GitHub 저장소의 이미지 링크를 사용하고 있으나, GitHub 저장소 링크는 직접 이미지 파일을 가리키는 URL이 아니므로 이를 수정해야 합니다.
+
+수정된 코드:
+html
+Copy code
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +13,13 @@
 <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs='sourceType: webcam;'>
         <a-assets>
-            <img id="vi" src="https://github.com/person55/ar_test/blob/master/%E1%84%8C%E1%85%AE%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B7(%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AF).png">
+            <!-- 이미지 파일을 미리 로드합니다. -->
+            <!-- GitHub 저장소 링크 대신 이미지의 직접 링크를 사용하세요. 예시는 임시 URL입니다. -->
+            <img id="img" src=""/>
         </a-assets>
+        <!-- "hiro" 마커에 반응하여 이미지를 표시합니다. -->
         <a-marker preset="hiro">
-            <a-image src="#vi" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
+            <a-image src="#img" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
