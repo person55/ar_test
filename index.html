@@ -4,12 +4,15 @@
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
-<body style="margin : 0px; overflow: hidden;">
+<body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs='sourceType: webcam;'>
-        <!-- "hiro" 마커에 반응하여 이미지를 표시합니다 -->
+        <a-assets>
+            <!-- Here we assume you have a direct link to a video file -->
+            <video id="vi" autoplay loop src="path/to/your/video.mp4"></video>
+        </a-assets>
+        <!-- Responding to "hiro" marker to display the video -->
         <a-marker preset="hiro">
-            <!-- 이미지의 경로를 "src"에 지정합니다 -->
-            <a-image src="https://media.giphy.com/media/T9pdDfqCgWCB2/giphy.gif?cid=790b7611tkcuk34s9zk661lx7asrv143vyggp3a47deccn6q&ep=v1_gifs_search&rid=giphy.gif&ct=g" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
+            <a-video src="#vi" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-video>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
