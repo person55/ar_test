@@ -6,8 +6,10 @@
 </head>
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded arjs='sourceType: webcam;'>
-        <a-marker preset="HIRO.jpg">
-            <a-box position="0 0.5 0" material="color: red;"></a-box>
+        <!-- "hiro" 마커에 반응하여 이미지를 표시합니다 -->
+        <a-marker preset="HIRO">
+            <!-- 이미지의 경로를 "src"에 지정합니다 -->
+            <a-image src="" position="0 0.5 0" rotation="-90 0 0" scale="2 2 2"></a-image>
         </a-marker>
         <a-entity camera></a-entity>
     </a-scene>
