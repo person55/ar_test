@@ -7,10 +7,8 @@
 <body style="margin: 0px; overflow: hidden;">
     <a-scene embedded arjs='sourceType: webcam;'>
         <a-assets>
-            <!-- Here we assume you have a direct link to a video file -->
-            <img id="vi" autoplay loop src="https://github.com/person55/ar_test/blob/master/%E1%84%8C%E1%85%AE%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B7(%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AF).png"></video>
+            <img id="vi" src="https://github.com/person55/ar_test/blob/master/%E1%84%8C%E1%85%AE%E1%86%A8%E1%84%8B%E1%85%B5%E1%86%B7(%E1%84%89%E1%85%B5%E1%84%80%E1%85%A1%E1%86%AF).png">
         </a-assets>
-        <!-- Responding to "hiro" marker to display the video -->
         <a-marker preset="hiro">
             <a-image src="#vi" position="0 0.5 0" rotation="-90 0 0" scale="1 1 1"></a-image>
         </a-marker>
