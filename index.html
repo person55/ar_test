@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <title>AR Marker to Play SoundCloud Audio</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <style>
+        .hidden { display: none; }
+    </style>
 </head>
-<body style="margin : 0px; overflow: hidden;">
-    <a-scene embedded arjs='sourceType: webcam;'>
-        <a-assets>
-            <audio id="sound" src="https://raw.githubusercontent.com/person55/ar_test/blob/master/nolongerapainter.mp3"></audio>
-        </a-assets>
-        <a-marker preset="hiro">
-            <!-- 마커 인식 시 사운드 재생 -->
-            <a-sound src="#sound" autoplay="true" position="0 1 -5"></a-sound>
-        </a-marker>
-        <a-entity camera></a-entity>
-    </a-scene>
+<body style="margin: 0; overflow: hidden;">
+
+<div id="audioContainer" class="hidden">
+    <!-- SoundCloud iframe Embed -->
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/kyung-hwan-sohn/no-longer-a-painter1712631067906?si=07636ed5b99241dcb2d468eab1dc5ec0&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+</div>
+
+<a-scene embedded arjs="sourceType: webcam;">
+    <a-marker preset="hiro" id="hiroMarker">
+        <!-- AR Content goes here -->
+    </a-marker>
+    <a-entity camera></a-entity>
+</a-scene>
+
+<script>
+    document.querySelector('#hiroMarker').addEventListener('markerFound', function () {
+        var audioContainer = document.getElementById('audioContainer');
+        audioContainer.classList.remove('hidden');
+    });
+
+    document.querySelector('#hiroMarker').addEventListener('markerLost', function () {
+        var audioContainer = document.getElementById('audioContainer');
+        audioContainer.classList.add('hidden');
+    });
+</script>
+
 </body>
 </html>
